@@ -1,8 +1,8 @@
-package application.heranca.application;
+package application.herancaepolimorfismo.application;
 
-import application.heranca.entities.Account;
-import application.heranca.entities.BussinesAccount;
-import application.heranca.entities.SavingsAccount;
+import application.herancaepolimorfismo.entities.Account;
+import application.herancaepolimorfismo.entities.BussinesAccount;
+import application.herancaepolimorfismo.entities.SavingsAccount;
 
 public class Program {
     static void main() {
@@ -54,5 +54,15 @@ public class Program {
         Account ac3 = new BussinesAccount(1003, "Bob", 1000.0, 500.0);
         ac3.withdraw(200.0);
         System.out.println(ac3.getBalance());
+
+        //polimorfismo
+
+        var x = new Account(1020, "Jorge", 1000.0);
+        x.withdraw(100.0);
+        var y = new SavingsAccount(1001, "Joice", 1000.0, 0.10);
+        y.withdraw(100.0);
+
+        System.out.println(x.getBalance());
+        System.out.println(y.getBalance());
     }
 }
